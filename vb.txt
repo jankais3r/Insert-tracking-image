@@ -1,0 +1,20 @@
+Private Sub insert_image()
+
+Template = "C:\Users\fs\Desktop\test.oft"
+
+strNew = InputBox("")
+
+strFind = "xxx"
+
+Dim oApp As Object, oMail As Object
+
+Set oApp = CreateObject("Outlook.Application")
+Set oMail = oApp.CreateItemFromTemplate(Template)
+
+With oMail
+    .HTMLBody = Replace(oMail.HTMLBody, strFind, strNew)
+    .Display
+End With
+
+End Sub
+
